@@ -3,15 +3,28 @@
  * @returns {number} the length of the array
  */
 function getLength(numbers) {
-  // TODO
+  return numbers.length;
 }
 
 /**
  * @param {number[]} numbers an array of integers
  * @returns {number} the sum of the numbers
  */
+/*function getSum(numbers) {
+  let sum = 0;
+  let i = 0;
+  while (i < numbers.length) {
+    const number = numbers[i];
+    sum += number;
+    i++;
+  }
+  return sum;
+}
+*/
 function getSum(numbers) {
-  // TODO
+  let sum = 0;
+  for (let i = 0; i < numbers.length; i++) sum += numbers[i];
+  return sum;
 }
 
 /**
@@ -19,7 +32,9 @@ function getSum(numbers) {
  * @returns {number} the mean of the numbers
  */
 function getMean(numbers) {
-  // TODO
+  let sum = getSum(numbers);
+  let length = getLength(numbers);
+  return sum / length;
 }
 
 /**
@@ -27,7 +42,9 @@ function getMean(numbers) {
  * @returns {number} the smallest of the numbers
  */
 function getMin(numbers) {
-  // TODO
+  let orderArray = numbers.toSorted();
+  let minNumber = orderArray[0];
+  return minNumber;
 }
 
 /**
@@ -35,7 +52,9 @@ function getMin(numbers) {
  * @returns {number} the largest of the numbers
  */
 function getMax(numbers) {
-  // TODO
+  let orderArray = numbers.toSorted();
+  let maxNumber = orderArray[numbers.length - 1];
+  return maxNumber;
 }
 
 /**
@@ -43,6 +62,9 @@ function getMax(numbers) {
  * @returns {number} the range of the numbers (max - min)
  */
 function getRange(numbers) {
+  let max = getMax(numbers);
+  let min = getMin(numbers);
+  return max - min;
   // TODO
 }
 
@@ -51,7 +73,13 @@ function getRange(numbers) {
  * @returns {number[]} the even numbers in the array
  */
 function getEvens(numbers) {
-  // TODO
+  let evens = [];
+  for (const n of numbers) {
+    if (n % 2 === 0) {
+      evens.push(n);
+    }
+  }
+  return evens;
 }
 
 /**
@@ -59,7 +87,13 @@ function getEvens(numbers) {
  * @returns {number[]} the odd numbers in the array
  */
 function getOdds(numbers) {
-  // TODO
+  let odds = [];
+  for (const n of numbers) {
+    if (n % 2 !== 0) {
+      odds.push(n);
+    }
+  }
+  return odds;
 }
 
 // === READ BUT DO NOT EDIT THE CODE BELOW ===
